@@ -438,7 +438,6 @@
       "ref_react_dom",
       "ref_react_hook_form",
       "ref_react_router",
-      "ref_supabase_supabase_js",
       "ref_tailwind_merge",
       "ref_tailwindcss",
       "ref_tanstack_react_query",
@@ -701,6 +700,11 @@
       "tsconfig_compileroptions_paths",
       "tsconfig_files",
       "tsconfig_references"
+    ],
+    "25": [
+      "ref_supabase_supabase_js",
+      "src_lib_supabase",
+      "src_lib_supabase_supabase"
     ]
   },
   "cohesion": {
@@ -711,7 +715,7 @@
     "4": 0.06262626262626263,
     "5": 0.0928030303030303,
     "6": 0.09032258064516129,
-    "7": 0.07407407407407407,
+    "7": 0.07692307692307693,
     "8": 0.1383399209486166,
     "9": 0.09523809523809523,
     "10": 0.18421052631578946,
@@ -728,17 +732,18 @@
     "21": 0.3333333333333333,
     "22": 0.3333333333333333,
     "23": 0.4,
-    "24": 0.4
+    "24": 0.4,
+    "25": 0.6666666666666666
   },
   "gods": [
     {
-      "id": "agents_skills_ui_ux_pro_max_scripts_core_search",
-      "label": "search()",
+      "id": "src_hooks_usefinance_usefinance",
+      "label": "useFinance()",
       "degree": 43
     },
     {
-      "id": "src_hooks_usefinance_usefinance",
-      "label": "useFinance()",
+      "id": "agents_skills_ui_ux_pro_max_scripts_core_search",
+      "label": "search()",
       "degree": 43
     },
     {
@@ -784,17 +789,6 @@
   ],
   "surprises": [
     {
-      "source": "TestEndToEndCoherence",
-      "target": "DesignSystemGenerator",
-      "source_files": [
-        ".agents/skills/ui-ux-pro-max/scripts/tests/test_design_system_mode.py",
-        ".agents/skills/ui-ux-pro-max/scripts/design_system.py"
-      ],
-      "confidence": "INFERRED",
-      "relation": "uses",
-      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
-    },
-    {
       "source": "TestBm25CoreBehavior",
       "target": "BM25",
       "source_files": [
@@ -806,26 +800,37 @@
       "why": "inferred connection - not explicitly stated in source; bridges separate communities"
     },
     {
-      "source": "TestReasoningMatch",
+      "source": "TestEndToEndCoherence",
       "target": "DesignSystemGenerator",
       "source_files": [
-        ".agents/skills/ui-ux-pro-max/scripts/tests/test_core.py",
+        ".agents/skills/ui-ux-pro-max/scripts/tests/test_design_system_mode.py",
         ".agents/skills/ui-ux-pro-max/scripts/design_system.py"
       ],
       "confidence": "INFERRED",
       "relation": "uses",
-      "why": "inferred connection - not explicitly stated in source"
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
     },
     {
-      "source": "TestReasoningContract",
-      "target": "DesignSystemGenerator",
+      "source": "AccountSourcesListProps",
+      "target": "AccountType",
       "source_files": [
-        ".agents/skills/ui-ux-pro-max/scripts/tests/test_data_contracts.py",
-        ".agents/skills/ui-ux-pro-max/scripts/design_system.py"
+        "src/components/finance/AccountSourcesList.tsx",
+        "src/types/finance.ts"
       ],
-      "confidence": "INFERRED",
-      "relation": "uses",
-      "why": "inferred connection - not explicitly stated in source"
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "peripheral node `AccountSourcesListProps` unexpectedly reaches hub `AccountType`"
+    },
+    {
+      "source": "AddAccountModalProps",
+      "target": "AccountType",
+      "source_files": [
+        "src/components/modals/AddAccountModal.tsx",
+        "src/types/finance.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "peripheral node `AddAccountModalProps` unexpectedly reaches hub `AccountType`"
     },
     {
       "source": "TestTokenizer",
