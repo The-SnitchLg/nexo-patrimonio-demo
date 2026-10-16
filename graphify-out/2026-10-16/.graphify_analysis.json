@@ -825,17 +825,6 @@
       "why": "inferred connection - not explicitly stated in source; bridges separate communities"
     },
     {
-      "source": "ImportReviewModalProps",
-      "target": "ExtractedStatementData",
-      "source_files": [
-        "src/components/documents/ImportReviewModal.tsx",
-        "src/domain/reconciliation.ts"
-      ],
-      "confidence": "EXTRACTED",
-      "relation": "references",
-      "why": "peripheral node `ImportReviewModalProps` unexpectedly reaches hub `ExtractedStatementData`"
-    },
-    {
       "source": "AccountSourcesListProps",
       "target": "AccountType",
       "source_files": [
@@ -862,6 +851,17 @@
       "target": "DesignSystemGenerator",
       "source_files": [
         ".agents/skills/ui-ux-pro-max/scripts/tests/test_core.py",
+        ".agents/skills/ui-ux-pro-max/scripts/design_system.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "uses",
+      "why": "inferred connection - not explicitly stated in source"
+    },
+    {
+      "source": "TestReasoningContract",
+      "target": "DesignSystemGenerator",
+      "source_files": [
+        ".agents/skills/ui-ux-pro-max/scripts/tests/test_data_contracts.py",
         ".agents/skills/ui-ux-pro-max/scripts/design_system.py"
       ],
       "confidence": "INFERRED",

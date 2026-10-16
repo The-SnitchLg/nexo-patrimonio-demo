@@ -4,52 +4,45 @@
 - cluster-only mode — file stats not available
 
 ## Summary
-- 669 nodes · 1456 edges · 36 communities (26 shown, 10 thin omitted)
+- 670 nodes · 1457 edges · 29 communities (23 shown, 6 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 36 edges (avg confidence: 0.86)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `595a3017`
+- Built from commit: `b129113b`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - useFinance
-- validate_data.py
 - DesignSystemGenerator
-- finance.ts
-- BM25
+- validate_data.py
 - design_system.py
-- detect_domain
-- _select_palette_for_mode
-- package.json
+- test_design_system_mode.py
+- BM25
+- finance.ts
 - core.py
 - search_stack
-- test_design_system_mode.py
+- package.json
+- search
 - compilerOptions
+- detect_domain
 - dependencies
 - compilerOptions
-- search
 - CatalogRefreshTest
-- test_data_contracts.py
+- csv
 - devDependencies
-- test_core.py
-- TestNativeDesktopStackFreshness
-- _normalize
-- TestStyleTaxonomy
-- generate_design_system
+- test_text_layout_resilience.py
 - TestThresholdGate
 - verify-app.mjs
-- _row_identities
-- TestTextLayoutDataContracts
+- _load_csv
 - .oxlintrc.json
 - scripts
-- TestMetricMath
 - vite.config.ts
+- TestMetricMath
 - tsconfig.json
 - TestFixtureValidation
 - TestDiagnosticsContracts
-- TestTextLayoutRetrieval
 
 ## God Nodes (most connected - your core abstractions)
 1. `useFinance()` - 45 edges
@@ -66,71 +59,71 @@
 ## Surprising Connections (you probably didn't know these)
 - `TestEndToEndCoherence` --uses--> `DesignSystemGenerator`  [INFERRED]
   .agents/skills/ui-ux-pro-max/scripts/tests/test_design_system_mode.py → .agents/skills/ui-ux-pro-max/scripts/design_system.py
-- `ImportReviewModalProps` --references--> `ExtractedStatementData`  [EXTRACTED]
-  src/components/documents/ImportReviewModal.tsx → src/domain/reconciliation.ts
 - `AccountSourcesListProps` --references--> `AccountType`  [EXTRACTED]
   src/components/finance/AccountSourcesList.tsx → src/types/finance.ts
 - `AddAccountModalProps` --references--> `AccountType`  [EXTRACTED]
   src/components/modals/AddAccountModal.tsx → src/types/finance.ts
-- `ExtractedStatementData` --references--> `Holding`  [EXTRACTED]
-  src/domain/reconciliation.ts → src/types/finance.ts
+- `TestReasoningMatch` --uses--> `DesignSystemGenerator`  [INFERRED]
+  .agents/skills/ui-ux-pro-max/scripts/tests/test_core.py → .agents/skills/ui-ux-pro-max/scripts/design_system.py
+- `TestReasoningContract` --uses--> `DesignSystemGenerator`  [INFERRED]
+  .agents/skills/ui-ux-pro-max/scripts/tests/test_data_contracts.py → .agents/skills/ui-ux-pro-max/scripts/design_system.py
 
 ## Import Cycles
 - None detected.
 
-## Communities (36 total, 10 thin omitted)
+## Communities (29 total, 6 thin omitted)
 
 ### Community 0 - "useFinance"
-Cohesion: 0.11
-Nodes (46): lucide-react, react, recharts, App(), MainRouter(), AllocationDonut(), EVOLUTION_DATA, SnapshotEvolution() (+38 more)
+Cohesion: 0.10
+Nodes (50): lucide-react, react, recharts, vitest, App(), MainRouter(), AllocationDonut(), EVOLUTION_DATA (+42 more)
 
-### Community 1 - "validate_data.py"
+### Community 1 - "DesignSystemGenerator"
+Cohesion: 0.06
+Nodes (14): DesignSystemGenerator, apply_decision_rules(), _object_without_duplicates(), parse_decision_rules(), _validate_action(), TestReasoningMatch, read_rows(), split_values() (+6 more)
+
+### Community 2 - "validate_data.py"
 Cohesion: 0.07
 Nodes (42): read_rows(), TestAccessibilityGuidance, TestChartsTypographyAndIcons, TestCurrentReactGuidance, TestSemanticColors, _catalog_date(), _check_app_interface_contract(), _check_catalog_contract() (+34 more)
 
-### Community 2 - "DesignSystemGenerator"
+### Community 3 - "design_system.py"
 Cohesion: 0.06
-Nodes (10): DesignSystemGenerator, _resolve_dial(), TestReasoningMatch, read_rows(), split_values(), style_identities(), TestGeneratedCatalogContract, TestLandingAndStackContract (+2 more)
+Nodes (16): ansi_ljust(), _detect_page_type(), format_ascii_box(), format_markdown(), format_master_md(), format_page_override_md(), generate_design_system(), _generate_intelligent_overrides() (+8 more)
 
-### Community 3 - "finance.ts"
+### Community 4 - "test_design_system_mode.py"
+Cohesion: 0.07
+Nodes (14): _contrast_ratio(), _derive_dark_palette(), _filter_anti_patterns_for_mode(), _palette_is_dark(), _query_wants_dark(), _relative_luminance(), _resolve_color_mode(), _select_palette_for_mode() (+6 more)
+
+### Community 5 - "BM25"
 Cohesion: 0.10
-Nodes (29): decimal.js, @supabase/supabase-js, vitest, FinanceContext, FinanceContextType, FinanceProvider(), getInitialStorage(), INITIAL_DOCS (+21 more)
+Nodes (9): BM25, _file_signature(), _get_bm25(), _load_csv_snapshot(), _search_csv(), _search_csv_detailed(), _suggest_identities(), TestBm25CoreBehavior (+1 more)
 
-### Community 4 - "BM25"
-Cohesion: 0.11
-Nodes (7): BM25, _get_bm25(), _search_csv(), _search_csv_detailed(), _suggest_identities(), TestBm25CoreBehavior, TestTokenizer
+### Community 6 - "finance.ts"
+Cohesion: 0.13
+Nodes (25): decimal.js, @supabase/supabase-js, ImportReviewModalProps, FinanceContext, FinanceContextType, FinanceProvider(), getInitialStorage(), INITIAL_DOCS (+17 more)
 
-### Community 5 - "design_system.py"
+### Community 7 - "core.py"
 Cohesion: 0.09
-Nodes (11): ansi_ljust(), _detect_page_type(), format_ascii_box(), format_master_md(), format_page_override_md(), _generate_intelligent_overrides(), hex_to_ansi(), persist_design_system() (+3 more)
+Nodes (15): _exact_match_diagnostic(), _exact_row_identity(), _exact_stack_identifier(), _legacy_successor_guidance(), _normalize(), _passes_threshold(), _project_row(), _query_coverage() (+7 more)
 
-### Community 6 - "detect_domain"
-Cohesion: 0.11
-Nodes (10): _contains_phrase(), detect_domain(), _domain_keywords(), _file_signature(), _load_csv(), _load_csv_snapshot(), _load_product_keywords(), _load_rows_or_empty() (+2 more)
+### Community 8 - "search_stack"
+Cohesion: 0.12
+Nodes (5): search_stack(), _rows(), TestNativeDesktopStackFreshness, _rows(), TestWebStackFreshness
 
-### Community 7 - "_select_palette_for_mode"
-Cohesion: 0.11
-Nodes (8): _contrast_ratio(), _derive_dark_palette(), _palette_is_dark(), _relative_luminance(), _select_palette_for_mode(), TestEndToEndCoherence, TestLuminance, TestPaletteSelection
-
-### Community 8 - "package.json"
+### Community 9 - "package.json"
 Cohesion: 0.08
 Nodes (24): name, private, type, version, clsx, date-fns, @hookform/resolvers, jsdom (+16 more)
 
-### Community 9 - "core.py"
+### Community 10 - "search"
 Cohesion: 0.14
-Nodes (4): _passes_threshold(), _query_coverage(), _suggest_terms(), read_rows()
+Nodes (3): search(), TestSearchDomains, TestStyleTaxonomy
 
-### Community 10 - "search_stack"
-Cohesion: 0.14
-Nodes (6): _exact_stack_identifier(), _project_row(), search_stack(), _valid_max_results(), _rows(), TestWebStackFreshness
-
-### Community 11 - "test_design_system_mode.py"
-Cohesion: 0.14
-Nodes (6): _filter_anti_patterns_for_mode(), _query_wants_dark(), _resolve_color_mode(), _style_is_dark_primary(), TestAntiPatternGating, TestModeResolution
-
-### Community 12 - "compilerOptions"
+### Community 11 - "compilerOptions"
 Cohesion: 0.10
 Nodes (20): compilerOptions, allowArbitraryExtensions, allowImportingTsExtensions, erasableSyntaxOnly, jsx, lib, module, moduleDetection (+12 more)
+
+### Community 12 - "detect_domain"
+Cohesion: 0.18
+Nodes (5): _contains_phrase(), detect_domain(), _domain_keywords(), _rewrite_query_for_domain(), TestDomainDetection
 
 ### Community 13 - "dependencies"
 Cohesion: 0.11
@@ -140,69 +133,57 @@ Nodes (19): dependencies, clsx, date-fns, decimal.js, @hookform/resolvers, lucid
 Cohesion: 0.12
 Nodes (16): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module, moduleDetection, noEmit, noFallthroughCasesInSwitch (+8 more)
 
-### Community 15 - "search"
-Cohesion: 0.21
-Nodes (3): search(), _style_search_destination(), TestSearchDomains
-
-### Community 17 - "test_data_contracts.py"
-Cohesion: 0.23
-Nodes (5): apply_decision_rules(), _object_without_duplicates(), parse_decision_rules(), _validate_action(), _check_reasoning_contract()
-
-### Community 18 - "devDependencies"
+### Community 17 - "devDependencies"
 Cohesion: 0.15
 Nodes (13): devDependencies, jsdom, oxlint, @playwright/test, @testing-library/jest-dom, @testing-library/react, @types/node, @types/react (+5 more)
 
-### Community 21 - "_normalize"
-Cohesion: 0.22
-Nodes (5): _exact_match_diagnostic(), _legacy_successor_guidance(), _normalize(), _stack_query_requests_legacy(), _stack_row_filter()
+### Community 18 - "test_text_layout_resilience.py"
+Cohesion: 0.20
+Nodes (3): read_rows(), TestTextLayoutDataContracts, TestTextLayoutRetrieval
 
-### Community 23 - "generate_design_system"
-Cohesion: 0.29
-Nodes (3): format_markdown(), generate_design_system(), TestPersistence
-
-### Community 25 - "verify-app.mjs"
+### Community 20 - "verify-app.mjs"
 Cohesion: 0.29
 Nodes (3): @playwright/test, SCREENSHOTS_DIR, VIEWPORTS
 
-### Community 26 - "_row_identities"
+### Community 21 - "_load_csv"
 Cohesion: 0.33
-Nodes (3): _exact_row_identity(), _row_identities(), _style_identity()
+Nodes (3): _load_csv(), _load_product_keywords(), _load_rows_or_empty()
 
-### Community 28 - ".oxlintrc.json"
+### Community 22 - ".oxlintrc.json"
 Cohesion: 0.33
 Nodes (5): plugins, rules, react/only-export-components, react/rules-of-hooks, $schema
 
-### Community 29 - "scripts"
+### Community 23 - "scripts"
 Cohesion: 0.33
 Nodes (6): scripts, build, dev, lint, preview, test
 
-### Community 31 - "vite.config.ts"
-Cohesion: 0.40
+### Community 24 - "vite.config.ts"
+Cohesion: 0.33
 Nodes (3): @tailwindcss/vite, vite, @vitejs/plugin-react
 
-### Community 32 - "tsconfig.json"
+### Community 26 - "tsconfig.json"
 Cohesion: 0.40
 Nodes (4): compilerOptions, paths, files, references
 
 ## Knowledge Gaps
 - **19 isolated node(s):** `clsx`, `date-fns`, `@hookform/resolvers`, `jsdom`, `motion` (+14 more)
-  These have ≤1 connection - possible missing edges. (Counts symbols only; 233 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+  These have ≤1 connection - possible missing edges. (Counts symbols only; 234 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `search()` connect `search` to `validate_data.py`, `DesignSystemGenerator`, `TestDiagnosticsContracts`, `BM25`, `design_system.py`, `detect_domain`, `TestTextLayoutRetrieval`, `core.py`, `search_stack`, `test_core.py`, `_normalize`, `TestStyleTaxonomy`, `_row_identities`?**
+- **Why does `search()` connect `search` to `DesignSystemGenerator`, `validate_data.py`, `design_system.py`, `BM25`, `core.py`, `detect_domain`, `csv`, `test_text_layout_resilience.py`, `_load_csv`, `TestDiagnosticsContracts`?**
   _High betweenness centrality (0.056) - this node is a cross-community bridge._
 - **Are the 3 inferred relationships involving `DesignSystemGenerator` (e.g. with `TestReasoningMatch` and `TestReasoningContract`) actually correct?**
   _`DesignSystemGenerator` has 3 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `clsx`, `date-fns`, `@hookform/resolvers` to the rest of the system?**
   _19 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `useFinance` be split into smaller, more focused modules?**
-  _Cohesion score 0.10915492957746478 - nodes in this community are weakly interconnected._
-- **Why does `DesignSystemGenerator` connect `DesignSystemGenerator` to `design_system.py`, `_select_palette_for_mode`, `test_design_system_mode.py`, `test_data_contracts.py`, `test_core.py`, `generate_design_system`?**
+  _Cohesion score 0.09607270366764038 - nodes in this community are weakly interconnected._
+- **Why does `DesignSystemGenerator` connect `DesignSystemGenerator` to `design_system.py`, `test_design_system_mode.py`?**
   _High betweenness centrality (0.049) - this node is a cross-community bridge._
-- **Should `validate_data.py` be split into smaller, more focused modules?**
-  _Cohesion score 0.07067307692307692 - nodes in this community are weakly interconnected._
-- **Why does `search_stack()` connect `search_stack` to `TestDiagnosticsContracts`, `TestTextLayoutRetrieval`, `BM25`, `design_system.py`, `detect_domain`, `core.py`, `search`, `test_core.py`, `TestNativeDesktopStackFreshness`, `_normalize`?**
+- **Should `DesignSystemGenerator` be split into smaller, more focused modules?**
+  _Cohesion score 0.056314699792960665 - nodes in this community are weakly interconnected._
+- **Why does `search_stack()` connect `search_stack` to `design_system.py`, `BM25`, `core.py`, `search`, `csv`, `test_text_layout_resilience.py`, `_load_csv`, `TestDiagnosticsContracts`?**
   _High betweenness centrality (0.036) - this node is a cross-community bridge._
