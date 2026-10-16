@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Nexo Patrimonio · Demo personal</title>
+<style>
+:root{--bg:#080e1b;--shell:#0c1525;--card:#111e30;--card2:#15253a;--stroke:#243348;--t:#f3f6ff;--muted:#8da1b8;--a:#6a79ff;--a2:#8391ff;--green:#45dab2;--gold:#ffbd68;--red:#ff7183;--hover:#192c43;--shadow:0 14px 46px rgba(0,0,0,.15)}
+:root.light{--bg:#f5f7fb;--shell:#ffffff;--card:#ffffff;--card2:#f0f3fb;--stroke:#e4e9f2;--t:#19283b;--muted:#667c95;--a:#5265e5;--a2:#6c7be8;--green:#159d7a;--gold:#c78427;--red:#d95565;--hover:#edf1fb;--shadow:0 14px 38px rgba(38,61,89,.06)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--t);margin:0;font-size:14px}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--a);outline-offset:2px}.app{display:flex;min-height:100vh}.sidebar{position:sticky;top:0;height:100vh;width:242px;flex-shrink:0;background:var(--shell);border-right:1px solid var(--stroke);padding:26px 16px;display:flex;flex-direction:column;gap:26px}.brand{display:flex;align-items:center;gap:12px;padding:4px 11px}.brandmark{width:39px;height:39px;border-radius:13px;background:linear-gradient(140deg,#7f8bff,#3fc9ad);display:grid;place-items:center;color:white;font-weight:900;font-size:23px;box-shadow:0 6px 22px #6a79ff40}.brandtxt strong{display:block;letter-spacing:.35px;font-size:17px}.brandtxt span{display:block;color:var(--muted);font-size:10px;letter-spacing:1.5px;margin-top:4px}.side-label{font-size:10px;text-transform:uppercase;color:var(--muted);font-weight:800;letter-spacing:1.8px;margin:4px 13px 9px}.nav{display:flex;flex-direction:column;gap:5px}.navbtn{display:flex;align-items:center;gap:11px;background:transparent;border:0;color:var(--muted);padding:12px 14px;width:100%;text-align:left;border-radius:11px;font-size:13px;font-weight:600;transition:.18s}.navbtn:hover{background:var(--hover);color:var(--t)}.navbtn.active{color:#fff;background:linear-gradient(90deg,#6377f5,#5364d5);box-shadow:0 6px 20px #6072ee24}.navbtn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}.sidebox{margin-top:auto;background:var(--card);border:1px solid var(--stroke);border-radius:15px;padding:16px}.sidebox h4{margin:10px 0 5px;font-size:13px}.sidebox p{font-size:11px;color:var(--muted);line-height:1.6;margin:0}.avatar{width:31px;height:31px;background:#6d7fee30;color:var(--a2);border-radius:10px;display:grid;place-items:center;font-weight:900}.main{flex:1;min-width:0;padding:25px clamp(18px,3vw,46px) 70px;max-width:1600px;margin:auto;width:100%}.toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:32px}.crumb{font-size:12px;color:var(--muted)}.crumb b{color:var(--t);font-weight:700}.toolright{display:flex;gap:10px;align-items:center}.tbtn{background:var(--card);color:var(--t);border:1px solid var(--stroke);width:38px;height:38px;border-radius:11px;display:grid;place-items:center;font-size:17px}.tbtn:hover{border-color:var(--a2)}.chip{background:var(--card2);border:1px solid var(--stroke);border-radius:20px;padding:7px 12px;color:var(--muted);font-size:11px}.statusdot{display:inline-block;background:var(--green);width:7px;height:7px;border-radius:50%;margin-right:6px}.eyebrow{color:var(--a2);font-weight:750;font-size:11px;text-transform:uppercase;letter-spacing:1.7px;margin-bottom:7px}.pagehead{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:24px}.pagehead h1{font-size:clamp(25px,3vw,35px);letter-spacing:-1.2px;margin:3px 0 7px;font-weight:790}.pagehead p{color:var(--muted);font-size:13px;margin:0;line-height:1.55}.btn{border:1px solid var(--stroke);color:var(--t);border-radius:11px;background:var(--card);font-size:12px;font-weight:700;padding:11px 15px;display:inline-flex;align-items:center;gap:8px;justify-content:center;white-space:nowrap}.btn:hover{background:var(--hover)}.btn.primary{border:0;color:#fff;background:linear-gradient(115deg,#667af7,#5867d6);box-shadow:0 5px 18px #6577f544}.btn.primary:hover{filter:brightness(1.12)}.btn.ghost{background:transparent}.dash-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.metric{background:var(--card);border:1px solid var(--stroke);border-radius:18px;padding:18px 20px;min-height:132px;box-shadow:var(--shadow);overflow:hidden;position:relative}.metric:after{content:"";position:absolute;right:-20px;top:-33px;height:110px;width:110px;border:1px solid var(--stroke);border-radius:50%}.metric-head{display:flex;gap:10px;align-items:center;color:var(--muted);font-size:12px}.metricicon{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;font-size:17px;background:#677cfc18;color:var(--a2)}.metric:nth-child(2) .metricicon{background:#42d4b118;color:var(--green)}.metric:nth-child(3) .metricicon{background:#f6b76118;color:var(--gold)}.metricval{font-size:clamp(19px,2.1vw,27px);font-weight:800;letter-spacing:-.65px;margin-top:14px;font-variant-numeric:tabular-nums}.metricfoot{color:var(--muted);font-size:11px;margin-top:7px}.overview{background:linear-gradient(115deg,#182c4e,#172b45 60%,#1b3754);border:1px solid #2d4665;border-radius:20px;padding:24px 28px;margin-bottom:18px;display:grid;grid-template-columns:1fr auto;gap:20px;position:relative;overflow:hidden}.overview:before{content:"";width:310px;height:310px;position:absolute;top:-175px;right:15%;background:radial-gradient(circle,#5c6fee45 0,transparent 66%)}.overview>*{position:relative;z-index:1}.overview small{color:#a7b9d0;font-size:12px}.overview-value{font-size:clamp(30px,4vw,44px);font-weight:800;color:white;letter-spacing:-1.3px;margin:8px 0 8px;font-variant-numeric:tabular-nums}.overview-note{font-size:11px;color:#9fb8cd}.overview-right{display:flex;flex-direction:column;align-items:flex-end;justify-content:center;gap:13px}.currency-switch{background:#ffffff13;display:flex;padding:4px;border:1px solid #ffffff2c;border-radius:11px}.currency-switch button{border:0;background:transparent;color:#b7c4d9;padding:7px 11px;border-radius:8px;font-size:11px;font-weight:800}.currency-switch button.selected{background:#fff;color:#182845}.sectionrow{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:18px}.sectionrow h3{font-size:15px;letter-spacing:-.2px;margin:0}.sectionrow span{font-size:11px;color:var(--muted)}.pair{display:grid;grid-template-columns:minmax(0,1.42fr) minmax(290px,1fr);gap:17px;margin-top:18px}.panel{background:var(--card);border:1px solid var(--stroke);border-radius:18px;padding:20px;box-shadow:var(--shadow);min-width:0}.timeline{display:flex;justify-content:space-between;font-size:10px;color:var(--muted);padding:0 9px}.chartwrap{height:218px;position:relative;background:linear-gradient(180deg,#6a79ff0e,transparent);border-radius:13px;overflow:hidden}.linechart{width:100%;height:100%}.linechart .gridline{stroke:var(--stroke);stroke-dasharray:4 7;stroke-width:1}.donutrow{display:flex;gap:25px;align-items:center;justify-content:space-evenly;min-height:213px}.donut{height:160px;width:160px;flex-shrink:0;position:relative;border-radius:50%;background:conic-gradient(var(--a) 0 100%)}.donut::after{content:"";position:absolute;inset:27px;border-radius:50%;background:var(--card)}.donutcenter{position:absolute;z-index:1;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}.donutcenter strong{font-size:19px}.donutcenter small{font-size:10px;color:var(--muted)}.legend{display:flex;flex-direction:column;gap:14px;min-width:125px}.legenditem{display:flex;gap:9px;align-items:center;font-size:11px;color:var(--muted)}.legenditem b{color:var(--t);margin-left:auto;font-size:12px}.swatch{width:9px;height:9px;border-radius:3px;flex-shrink:0}.bottomgrid{display:grid;grid-template-columns:minmax(0,1.42fr) minmax(290px,1fr);gap:17px;margin-top:17px}.activity{display:flex;align-items:center;gap:12px;padding:13px 2px;border-bottom:1px solid var(--stroke)}.activity:last-child{border:0}.actico{background:var(--card2);height:38px;width:38px;display:grid;place-items:center;border-radius:12px;font-size:16px;flex-shrink:0}.acttext{min-width:0;flex:1}.acttext b{display:block;font-size:12px}.acttext small{color:var(--muted);display:block;margin-top:5px;font-size:10px}.actval{font-size:12px;font-weight:800;white-space:nowrap}.alert{background:#6b79ff12;border:1px solid #697af53a;border-radius:13px;padding:12px 14px;line-height:1.65;color:var(--muted);font-size:11px;margin-bottom:11px}.alert strong{color:var(--t)}.insight{display:flex;gap:11px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--stroke)}.insight:last-child{border:0}.insighticon{width:28px;height:28px;flex-shrink:0;border-radius:9px;background:#6a79ff1a;color:var(--a2);display:grid;place-items:center}.insight p{font-size:11px;color:var(--muted);margin:0;line-height:1.55}.insight p b{color:var(--t)}.big-number{font-size:29px;font-weight:850;margin:10px 0}.empty{border:1px dashed var(--stroke);border-radius:15px;padding:35px 25px;text-align:center;color:var(--muted)}.empty strong{display:block;color:var(--t);font-size:16px;margin-bottom:6px}.empty .emptyico{font-size:26px;margin-bottom:10px}.holdtable{width:100%;border-collapse:collapse;font-size:12px;min-width:520px}.holdtable th{text-align:left;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.7px;font-weight:750;padding:12px 11px;border-bottom:1px solid var(--stroke)}.holdtable td{padding:13px 11px;border-bottom:1px solid var(--stroke);font-variant-numeric:tabular-nums}.holdtable tr:last-child td{border:0}.holdtable tbody tr:hover{background:var(--hover)}.ticker{font-weight:800;color:var(--t)}.tickername{font-size:10px;color:var(--muted);margin-top:3px}.right{text-align:right!important}.tag{display:inline-block;border-radius:7px;font-size:10px;font-weight:750;padding:5px 8px;background:#45dab21d;color:var(--green)}.tag.warn{background:#ffbd681c;color:var(--gold)}.tag.blue{background:#7e8cff1a;color:var(--a2)}.search{background:var(--bg);border:1px solid var(--stroke);color:var(--t);border-radius:11px;padding:11px 14px;min-width:180px}.search::placeholder{color:var(--muted)}.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}.account{display:flex;align-items:center;gap:13px;border-bottom:1px solid var(--stroke);padding:16px 2px}.account:last-child{border:0}.accico{height:44px;width:44px;background:var(--card2);border:1px solid var(--stroke);border-radius:13px;display:grid;place-items:center;font-size:19px}.accinfo{flex:1}.accinfo b{display:block;font-size:13px}.accinfo small{display:block;color:var(--muted);margin-top:5px}.accamount{text-align:right;font-weight:800;font-size:13px}.accamount span{color:var(--muted);display:block;font-size:10px;font-weight:400;margin-top:5px}.upload{border:1.5px dashed #687ae874;background:linear-gradient(150deg,#6b79ff11,#45dab209);border-radius:15px;padding:32px;text-align:center;cursor:pointer}.upload:hover{border-color:var(--a)}.upload .uico{font-size:27px;display:block;margin-bottom:10px}.upload strong{display:block;margin-bottom:6px}.upload small{color:var(--muted);font-size:11px}.formfield{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}.formfield label{font-size:11px;color:var(--muted);font-weight:750}.formfield input,.formfield select{width:100%;padding:12px;border-radius:10px;background:var(--bg);border:1px solid var(--stroke);color:var(--t);font-size:13px}.notice{font-size:11px;color:var(--muted);line-height:1.7}.modalbg{position:fixed;inset:0;background:#020715bb;backdrop-filter:blur(6px);display:grid;place-items:center;z-index:50;padding:20px}.modalbg[hidden]{display:none!important}.modal{background:var(--card);border:1px solid var(--stroke);border-radius:22px;width:min(460px,100%);padding:27px;box-shadow:0 28px 100px #0007}.modaltop{display:flex;justify-content:space-between;align-items:center;margin-bottom:19px}.modaltop h2{font-size:19px;margin:0}.x{background:var(--card2);border:0;border-radius:9px;color:var(--t);padding:7px 10px}.modalfoot{display:flex;gap:10px;justify-content:flex-end;margin-top:20px}.mobilebottom{display:none}.view{display:none}.view.active{display:block;animation:fade .22s ease}@keyframes fade{from{opacity:.7;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}.rule{height:1px;background:var(--stroke);margin:16px 0}.demo-badge{display:inline-block;font-size:10px;color:var(--gold);border:1px solid #ffbd684a;padding:5px 8px;border-radius:7px;background:#ffbd6810}.muted{color:var(--muted)}.periodpill{display:inline-block;color:var(--muted);border:1px solid var(--stroke);font-size:11px;padding:7px 10px;border-radius:9px}.footer{font-size:10px;color:var(--muted);text-align:center;padding-top:30px}.help{margin-top:10px;color:var(--muted);font-size:11px;line-height:1.65}.flexbt{display:flex;justify-content:space-between;align-items:center;gap:12px}.tinybar{height:7px;background:var(--card2);border-radius:50px;overflow:hidden;margin-top:10px}.tinybar span{display:block;background:var(--a);height:100%;border-radius:50px}.show-mobile{display:none}
+@media(max-width:1160px){.sidebar{width:212px}.main{padding:24px 22px 80px}.pair,.bottomgrid{grid-template-columns:1fr 1fr}.donutrow{gap:13px}.donut{height:132px;width:132px}.donut:after{inset:23px}.metric{padding:17px}}
+@media(max-width:950px){.sidebar{width:77px;padding:24px 10px}.brand{padding:0 9px}.brandtxt,.side-label,.sidebox,.navbtn span{display:none}.navbtn{justify-content:center;padding:13px}.navbtn svg{width:20px;height:20px}.main{padding:24px 22px 80px}.pair,.bottomgrid{grid-template-columns:1fr}.donutrow{justify-content:flex-start;gap:28px}.overview-value{font-size:35px}}
+@media(max-width:650px){.sidebar{display:none}.main{padding:20px 15px 92px}.toolbar{margin-bottom:24px}.crumb{font-size:11px}.chip{display:none}.pagehead{align-items:flex-start;flex-direction:column;margin-bottom:21px}.pagehead h1{font-size:28px}.pagehead>.btn{width:100%}.dash-grid{grid-template-columns:1fr 1fr;gap:10px}.metric{min-height:120px;padding:14px}.metric:first-child{grid-column:span 2}.metricval{font-size:22px}.metric-head{font-size:11px}.overview{padding:20px;grid-template-columns:1fr}.overview-value{font-size:33px}.overview-right{align-items:flex-start;flex-direction:row;justify-content:space-between}.panel{padding:16px}.pair,.bottomgrid{gap:13px;margin-top:13px}.donutrow{justify-content:space-around;gap:16px}.mobilebottom{position:fixed;bottom:0;left:0;right:0;display:flex;background:var(--shell);border-top:1px solid var(--stroke);padding:8px 4px max(9px,env(safe-area-inset-bottom));justify-content:space-around;z-index:20}.mobilebottom button{font-size:9px;border:0;color:var(--muted);background:none;display:flex;align-items:center;flex-direction:column;gap:5px;padding:5px 6px;min-width:55px}.mobilebottom button svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8}.mobilebottom button.active{color:var(--a2)}.two{grid-template-columns:1fr}.search{min-width:0;width:100%}.sectionrow{flex-wrap:wrap}.sectionrow .search{flex-basis:100%}.footer{padding-bottom:8px}}
+
+/* =========================================================
+   SYNC0RE-INSPIRED VISUAL SYSTEM · VISUAL RESTYLING ONLY
+   Monochrome, editorial serif, technical dashboards, orange signal.
+   Original information architecture and all functionality retained.
+   ========================================================= */
+:root{
+ --bg:#070707;--shell:#0b0b0b;--card:#0d0d0d;--card2:#191919;
+ --stroke:#303030;--t:#f3f0e9;--muted:#97948e;
+ --a:#f0ede6;--a2:#ece9e1;--green:#b6ceac;--gold:#fc9a71;
+ --red:#fb806d;--hover:#202020;--shadow:none;--signal:#ff7849;
+ --serif:Georgia,'Times New Roman',serif;--mono:'SFMono-Regular',Consolas,'Liberation Mono',monos;
+}
+:root.light{
+ --bg:#f5f3ef;--shell:#eceae5;--card:#fffefb;--card2:#e9e7e1;
+ --stroke:#d4d0c8;--t:#1b1a18;--muted:#69665f;
+ --a:#1c1b19;--a2:#34312c;--green:#3b6650;--gold:#b15c35;
+ --red:#b63e34;--hover:#e9e7e2;--shadow:none;--signal:#d7542b;
+}
+::selection{background:var(--signal);color:#fff}
+body{font-size:13px;font-family:Inter,'Helvetica Neue',Arial,ui-sans-serif,system-ui,sans-serif;letter-spacing:.005em;background:var(--bg)}
+.app{background:var(--bg)}
+button:focus-visible,input:focus-visible,select:focus-visible,.upload:focus-visible{outline:2px solid var(--signal);outline-offset:3px}
+.sidebar{width:247px;background:var(--shell);border-right:1px solid var(--stroke);padding:26px 18px 22px;gap:37px;z-index:2}
+.brand{gap:11px;padding:3px 9px 26px;border-bottom:1px solid var(--stroke)}
+.brandmark{background:#111;border:1px solid #54524d;color:#fff;border-radius:4px;width:37px;height:37px;box-shadow:none;font-family:var(--serif);font-weight:500;font-size:27px;position:relative}
+.brandmark:after{content:'';position:absolute;width:7px;height:7px;background:var(--signal);right:-3px;top:-3px;border:2px solid var(--shell)}
+:root.light .brandmark{background:#171613}
+.brandtxt strong{font-size:20px;letter-spacing:-.7px;font-weight:680;line-height:1.1}
+.brandtxt strong span{color:var(--signal)!important}
+.brandtxt>span{font-family:var(--mono);font-size:9px;letter-spacing:1.18px;margin-top:6px;color:var(--muted)}
+.side-label{font-family:var(--mono);font-weight:500;letter-spacing:1.75px;font-size:9px;color:#77736c;margin:0 11px 16px}
+.nav{gap:4px}
+.navbtn{font-weight:500;font-size:12px;letter-spacing:.05px;border-radius:5px;padding:13px 12px;color:var(--muted);position:relative}
+.navbtn svg{width:17px;height:17px;stroke-width:1.5}
+.navbtn:hover{background:var(--hover);color:var(--t)}
+.navbtn.active{background:#242321;color:var(--t);box-shadow:none;border:1px solid #46433f;padding:12px 11px}
+.navbtn.active:before{content:'';position:absolute;left:-1px;top:20%;height:60%;width:2px;background:var(--signal)}
+:root.light .navbtn.active{background:#fffdf9;border-color:#c1bdb5}
+.navbtn.active svg{color:var(--signal)}
+.sidebox{margin-top:auto;background:transparent;border:1px solid var(--stroke);border-radius:6px;padding:18px 16px 19px;position:relative}
+.sidebox:before{content:'SYSTEM / LOCAL';position:absolute;top:-8px;left:12px;padding:0 6px;font-family:var(--mono);font-size:8px;letter-spacing:1px;color:var(--muted);background:var(--shell)}
+.sidebox h4{font-size:12px;font-weight:650;margin:13px 0 7px}
+.sidebox p{font-size:11px;line-height:1.6}
+.avatar{border-radius:50%;width:24px;height:24px;background:#312d26;color:var(--signal);font-size:10px;border:1px solid #51463a}
+.main{max-width:1700px;padding:0 clamp(20px,3.3vw,54px) 62px;background:var(--bg)}
+.topline{height:31px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid var(--stroke);color:var(--muted);font-family:var(--mono);font-size:9px;letter-spacing:1.2px;text-transform:uppercase}
+.topline em{font-style:normal;color:var(--signal);margin-right:10px;font-size:13px;vertical-align:middle}
+.topline .rightline{font-size:9px;color:#77716c}
+.toolbar{height:67px;border-bottom:1px solid var(--stroke);margin:0 0 43px}
+.crumb{font-size:11px;color:var(--muted);letter-spacing:.12px}
+.crumb b{font-weight:580}
+.toolright{gap:8px}
+.tbtn{width:34px;height:34px;border-radius:5px;background:transparent;color:var(--t);border-color:var(--stroke);font-size:16px}
+.tbtn:hover{border-color:var(--muted);background:var(--hover)}
+.chip{border-radius:4px;padding:8px 10px;background:transparent;border-color:var(--stroke);font-family:var(--mono);letter-spacing:.1px;color:var(--muted);font-size:10px}
+.statusdot{background:var(--signal);height:6px;width:6px;margin-right:6px;box-shadow:0 0 0 3px #ff784920}
+.eyebrow{font-family:var(--mono);color:var(--signal);letter-spacing:1.65px;font-weight:600;font-size:10px;margin-bottom:14px}
+.eyebrow:before{content:'✳';font-size:11px;margin-right:8px}
+.pagehead{margin-bottom:34px;gap:30px;position:relative}
+.pagehead h1{font-family:var(--serif);font-size:clamp(35px,3.5vw,53px);font-weight:400;letter-spacing:-1.65px;line-height:1.11;margin:0 0 13px;color:var(--t)}
+.pagehead p{color:var(--muted);font-size:12px;line-height:1.65}
+.btn{padding:11px 16px;background:var(--card);border:1px solid #3a3936;color:var(--t);border-radius:5px;font-size:11px;font-weight:620;letter-spacing:.1px;transition:background .18s ease,color .18s ease,border-color .18s ease,transform .18s ease}
+.btn:hover{background:var(--hover);border-color:var(--muted);transform:translateY(-1px)}
+.btn.primary{background:var(--t);color:var(--bg);border:1px solid var(--t);box-shadow:none}
+.btn.primary:hover{background:var(--signal);border-color:var(--signal);color:#100a08;filter:none}
+.btn.ghost{background:transparent}
+.pagehead>.btn{margin-bottom:4px}
+.overview{background:linear-gradient(120deg,#171615 0%,#101010 56%,#171410 100%);border:1px solid #45423d;border-radius:7px;min-height:182px;padding:30px 34px;margin-bottom:0;gap:26px;overflow:clip}
+:root.light .overview{background:linear-gradient(120deg,#fdfbf8,#f0ede8);border-color:#bdb7ac}
+.overview:before{top:auto;right:-50px;bottom:-126px;width:400px;height:330px;background-image:radial-gradient(circle,#ffffff25 1px,transparent 1.2px);background-size:14px 14px;mask-image:linear-gradient(to left,#000,transparent)}
+:root.light .overview:before{background-image:radial-gradient(circle,#0000001c 1px,transparent 1.2px)}
+.overview:after{content:'PORTFOLIO / 001';position:absolute;right:32px;bottom:17px;font-family:var(--mono);font-size:9px;letter-spacing:1.6px;color:#817c75}
+.overview small{color:var(--muted);font-size:11px;letter-spacing:.1px}
+.overview small span{font-family:var(--mono);border:1px solid #64594c!important;padding:3px 7px!important;border-radius:3px!important;color:var(--signal)}
+.overview-value{font-family:var(--serif);font-size:clamp(42px,4.5vw,63px);font-weight:400;color:var(--t);letter-spacing:-2px;margin:11px 0 13px;line-height:1.02}
+.overview-note{color:var(--muted);font-size:10px;line-height:1.5;max-width:510px}
+.overview-right{gap:13px;z-index:2}
+.currency-switch{background:#171717;border:1px solid #44413b;border-radius:5px;padding:3px}
+:root.light .currency-switch{background:#e7e3da}
+.currency-switch button{font-family:var(--mono);border-radius:3px;color:#a19d95;font-size:10px;padding:8px 12px}
+.currency-switch button.selected{background:#f1eee8;color:#111}
+:root.light .currency-switch button.selected{background:#1a1917;color:white}
+.overview .btn.ghost{color:var(--t)!important;border-color:#55514b!important;background:#131313a8}
+:root.light .overview .btn.ghost{background:#fffdf8aa}
+.dash-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:16px;border:1px solid var(--stroke);border-radius:7px;overflow:hidden;background:var(--card)}
+#view-investments .dash-grid{margin-bottom:18px!important}
+.metric{background:transparent;border:0;border-right:1px solid var(--stroke);border-radius:0;box-shadow:none;padding:21px 23px;min-height:139px;transition:background .2s}
+.metric:last-child{border-right:0}
+.metric:hover{background:var(--hover)}
+.metric:after{content:'';height:15px;width:15px;right:17px;top:19px;border:1px solid #3e3b36;border-radius:0;transform:rotate(45deg)}
+.metric-head{gap:11px;color:#b8b3aa;font-family:var(--mono);font-size:10px;letter-spacing:.25px}
+:root.light .metric-head{color:var(--muted)}
+.metricicon,.metric:nth-child(2) .metricicon,.metric:nth-child(3) .metricicon{height:27px;width:27px;background:transparent;border:1px solid var(--stroke);border-radius:4px;color:var(--t);font-family:var(--serif);font-size:16px}
+.metric:nth-child(3) .metricicon{color:var(--signal)}
+.metricval{font-family:var(--serif);font-size:clamp(25px,2.7vw,34px);font-weight:400;letter-spacing:-.9px;margin-top:16px;line-height:1.1}
+.metricfoot{font-size:10px;margin-top:9px;color:var(--muted)}
+.pair,.bottomgrid{gap:16px;margin-top:16px}
+.panel{background:var(--card);border:1px solid var(--stroke);border-radius:7px;box-shadow:none;padding:22px 23px;position:relative}
+.panel:before{content:'';position:absolute;left:0;top:0;width:33px;height:1px;background:var(--signal)}
+.sectionrow{margin-bottom:24px}
+.sectionrow h3{font-size:13px;font-weight:630;letter-spacing:-.07px;color:var(--t)}
+.sectionrow span:not(.tag):not(.periodpill):not(.demo-badge){font-family:var(--mono);font-size:10px;color:var(--muted)}
+.periodpill{border-radius:4px;padding:6px 9px;border:1px solid var(--stroke);font-family:var(--mono);font-size:9px!important}
+.chartwrap{height:227px;background:linear-gradient(180deg,#ffffff05,transparent);border-radius:0;overflow:hidden}
+.linechart .gridline{stroke:#3a3936;stroke-dasharray:2 7;stroke-width:1}
+:root.light .linechart .gridline{stroke:#d6d2c9}
+.timeline{font-family:var(--mono);font-size:10px;padding-top:7px}
+.donutrow{min-height:221px;justify-content:space-evenly}
+.donut{height:164px;width:164px}
+.donut:after{inset:26px;background:var(--card)}
+.donutcenter strong{font-family:var(--serif);font-size:27px;font-weight:400}
+.donutcenter small{font-family:var(--mono);font-size:9px;letter-spacing:.15px}
+.legend{gap:17px}
+.legenditem{font-size:11px;gap:10px}
+.legenditem b{font-family:var(--mono);font-weight:500;font-size:10px}
+.swatch{width:8px;height:8px;border-radius:1px}
+.activity{padding:15px 1px}
+.actico,.accico{border-radius:4px;border:1px solid var(--stroke);background:#1b1a18;color:var(--t);font-family:var(--mono)}
+:root.light .actico,:root.light .accico{background:#eeece7}
+.actico{height:34px;width:34px;font-size:16px}
+.acttext b{font-size:11px;font-weight:610}
+.acttext small{font-size:10px;line-height:1.4}
+.actval{font-family:var(--mono);font-size:11px;font-weight:580}
+.alert{background:#ff784907;border:1px solid #6d3c2a;border-radius:4px;padding:13px 14px;margin-bottom:10px;color:var(--muted);font-size:11px}
+:root.light .alert{border-color:#d9b19d}
+.alert strong{color:var(--t)}
+.insight{gap:13px;padding:14px 0}
+.insighticon{width:27px;height:27px;background:#262320;border:1px solid #4c4339;border-radius:3px;color:var(--signal)}
+:root.light .insighticon{background:#f8eee7}
+.insight p{font-size:11px;line-height:1.65}
+.tag{border-radius:3px;font-size:9px;font-family:var(--mono);font-weight:500;letter-spacing:.1px;padding:5px 8px;background:#27372c;color:var(--green);border:1px solid #425b49}
+.tag.warn{background:#2a1d16;color:var(--gold);border-color:#63402f}
+.tag.blue{background:#252421;color:var(--t);border-color:var(--stroke)}
+:root.light .tag{background:#e9f0e4;border-color:#bad0b1}
+:root.light .tag.warn{background:#faf0e8;border-color:#e2c6af}
+:root.light .tag.blue{background:#f2f0e9}
+.holdtable{font-size:12px}
+.holdtable th{font-family:var(--mono);font-size:9px;letter-spacing:1.1px;font-weight:500;padding:13px 12px;color:var(--muted)}
+.holdtable td{padding:15px 12px}
+.ticker{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.25px}
+.tickername{font-size:10px;margin-top:6px}
+.search{background:var(--card2);border-radius:4px;border-color:var(--stroke);padding:10px 13px;font-size:11px}
+.accico{width:40px;height:40px;font-size:16px}
+.account{padding:16px 2px}
+.accinfo b{font-size:12px;font-weight:620}
+.accamount{font-family:var(--mono);font-size:12px;font-weight:600}
+.accamount span{font-family:Inter,Arial,sans-serif;font-size:10px}
+.tinybar{height:4px;background:var(--card2);border-radius:0}
+.tinybar span{background:var(--signal);border-radius:0}
+.empty{border:1px dashed #4c4842;border-radius:4px;padding:42px 25px}
+.empty strong{font-family:var(--serif);font-size:23px;font-weight:400}
+.emptyico{color:var(--signal)}
+.upload{border:1px dashed #77736d;background:repeating-linear-gradient(135deg,transparent 0,transparent 11px,#ffffff04 12px,transparent 13px);border-radius:4px;padding:41px 20px;transition:border-color .2s,background .2s}
+:root.light .upload{background:repeating-linear-gradient(135deg,transparent 0,transparent 11px,#00000004 12px,transparent 13px)}
+.upload:hover{border-color:var(--signal)}
+.upload .uico{font-family:var(--serif);font-size:33px;color:var(--signal)}
+.upload strong{font-size:12px;font-weight:650}
+.upload small{font-size:10px;line-height:1.5}
+.formfield label{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.2px}
+.formfield input,.formfield select{border-radius:4px;background:var(--card2);font-size:12px}
+.formfield input:focus,.formfield select:focus{border-color:var(--signal)}
+.notice,.help{font-size:10.5px;line-height:1.72}
+.demo-badge{border-radius:3px;border-color:#714531;background:#2c1d15;color:var(--gold);font-family:var(--mono);font-size:9px}
+:root.light .demo-badge{background:#f4e8e1}
+.modalbg{background:#000c;backdrop-filter:blur(10px)}
+.modal{border-radius:6px;padding:28px;background:var(--card);border:1px solid #666058;box-shadow:0 40px 100px #000b}
+.modaltop h2{font-family:var(--serif);font-size:27px;font-weight:400;letter-spacing:-.6px}
+.x{border-radius:3px;background:var(--card2);border:1px solid var(--stroke)}
+.footer{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:1.05px;color:#79756e;border-top:1px solid var(--stroke);text-align:left;margin-top:40px;padding-top:22px}
+@media(max-width:1160px){
+ .sidebar{width:220px}
+ .main{padding:0 25px 70px}
+ .pair,.bottomgrid{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
+ .donut{width:133px;height:133px}.donut:after{inset:23px}
+ .metric{padding:20px 16px}
+}
+@media(max-width:950px){
+ .sidebar{width:75px;padding:24px 9px}
+ .brand{padding:2px 8px 26px;justify-content:center}
+ .brandtxt,.side-label,.sidebox,.navbtn span{display:none}
+ .navbtn{justify-content:center;padding:13px}
+ .navbtn.active{padding:12px}
+ .navbtn svg{width:20px;height:20px}
+ .main{padding:0 22px 65px}
+ .pair,.bottomgrid{grid-template-columns:1fr}
+ .donutrow{justify-content:flex-start;gap:40px}
+}
+@media(max-width:650px){
+ .sidebar{display:none}
+ .main{padding:0 16px 108px}
+ .topline{height:28px;font-size:8px}.topline .rightline{font-size:8px;letter-spacing:0}
+ .toolbar{height:56px;margin-bottom:29px}
+ .chip{display:none}
+ .pagehead{flex-direction:column;align-items:stretch;margin-bottom:26px;gap:21px}
+ .pagehead h1{font-size:clamp(34px,9vw,44px);letter-spacing:-1.1px;margin-bottom:10px}
+ .pagehead p{font-size:11px}
+ .pagehead>.btn{width:100%;margin:0;min-height:42px}
+ .overview{padding:25px 22px 32px;grid-template-columns:1fr;min-height:0;gap:19px}
+ .overview:after{right:19px;bottom:10px;font-size:8px}
+ .overview-value{font-size:clamp(40px,10vw,52px);letter-spacing:-1.25px}
+ .overview-note{font-size:10px}
+ .overview-right{flex-direction:row;align-items:center;justify-content:space-between;gap:8px}
+ .overview .btn.ghost{padding:10px;font-size:10px}
+ .dash-grid{grid-template-columns:1fr 1fr;gap:0;margin-top:12px}
+ .metric{min-height:129px;padding:17px 14px;border-right:0;border-top:1px solid var(--stroke)}
+ .metric:first-child{grid-column:span 2;border-top:0;border-bottom:1px solid var(--stroke);min-height:121px}
+ .metric:nth-child(2){border-right:1px solid var(--stroke)}
+ .metric-head{font-size:9px;gap:6px;letter-spacing:0}
+ .metricicon{width:22px!important;height:22px!important;font-size:13px!important}
+ .metricval{font-size:clamp(21px,5.1vw,27px);letter-spacing:-.7px}
+ .metricfoot{font-size:9px;line-height:1.4}
+ .pair,.bottomgrid{gap:12px;margin-top:12px}
+ .panel{padding:18px 16px}
+ .sectionrow{margin-bottom:20px}
+ .sectionrow h3{font-size:12px}
+ .donutrow{justify-content:space-evenly;gap:12px}
+ .donut{width:136px;height:136px}.donut:after{inset:23px}
+ .legend{min-width:115px;gap:15px}
+ .mobilebottom{position:fixed;bottom:0;left:0;right:0;display:flex;background:#101010f2;backdrop-filter:blur(14px);border-top:1px solid #49433b;padding:10px 3px max(12px,env(safe-area-inset-bottom));justify-content:space-around;z-index:20}
+ :root.light .mobilebottom{background:#f6f4f0ef;border-color:var(--stroke)}
+ .mobilebottom button{font-family:var(--mono);font-size:9px;letter-spacing:-.35px;color:var(--muted);padding:5px 3px;min-width:50px}
+ .mobilebottom button svg{width:18px;height:18px;stroke-width:1.5}
+ .mobilebottom button.active{color:var(--signal)}
+ .two{grid-template-columns:1fr}
+ .search{min-width:0;width:100%}
+ .sectionrow{flex-wrap:wrap}
+ .sectionrow .search{flex-basis:100%}
+ .footer{padding-bottom:8px;line-height:1.7}
+}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+</style>
+</head>
+<body>
+<svg style="display:none"><symbol id="i-dashboard" viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="5" rx="2"/><rect x="13" y="10" width="8" height="11" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 19h18M5 15l5-5 4 3 6-8"/><path d="M17 5h3v3"/></symbol><symbol id="i-wallet" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="15" rx="3"/><path d="M5 6V4a2 2 0 0 1 2-2h11M16 12h6v5h-6a2 2 0 0 1 0-5"/></symbol><symbol id="i-dollar" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 5v14M16 8H10a3 3 0 0 0 0 6h4a3 3 0 0 1 0 6H8"/></symbol><symbol id="i-file" viewBox="0 0 24 24"><path d="M6 2h8l5 5v15H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z"/><path d="M14 2v5h5M8 12h8M8 16h7"/></symbol><symbol id="i-cog" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.1-1l2-1.5-2-3.4-2.3 1a7 7 0 0 0-1.7-1L14.6 3h-4L10 6.1a7 7 0 0 0-1.7 1l-2.3-1-2 3.4L6 11a7 7 0 0 0 0 2l-2 1.5 2 3.4 2.3-1a7 7 0 0 0 1.7 1l.6 3.1h4l.3-3.1a7 7 0 0 0 1.7-1l2.3 1 2-3.4L19 13a7 7 0 0 0 0-1Z"/></symbol></svg>
+<div class="app">
+<aside class="sidebar">
+ <div class="brand"><div class="brandmark">N</div><div class="brandtxt"><strong>nexo<span style="display:inline;color:var(--green)">.</span></strong><span>PATRIMONIO PERSONAL</span></div></div>
+ <div><div class="side-label">Mi espacio</div><nav class="nav" id="side-nav">
+ <button class="navbtn active" data-page="dashboard"><svg><use href="#i-dashboard"/></svg><span>Vista general</span></button>
+ <button class="navbtn" data-page="investments"><svg><use href="#i-chart"/></svg><span>Inversiones</span></button>
+ <button class="navbtn" data-page="cop"><svg><use href="#i-wallet"/></svg><span>Ahorros en COP</span></button>
+ <button class="navbtn" data-page="usd"><svg><use href="#i-dollar"/></svg><span>Ahorros en USD</span></button>
+ <button class="navbtn" data-page="documents"><svg><use href="#i-file"/></svg><span>Mis documentos</span></button>
+ <button class="navbtn" data-page="settings"><svg><use href="#i-cog"/></svg><span>Configuración</span></button>
+ </nav></div>
+ <div class="sidebox"><div class="avatar">●</div><h4>Tu espacio privado</h4><p>Demo local. Los ajustes manuales quedan en este navegador; no hay conexión bancaria.</p></div>
+</aside>
+<main class="main">
+<div class="topline" aria-hidden="true"><span><em>✦</em> NEXO / PATRIMONIO PERSONAL</span><span class="rightline">TU ESPACIO DE CONTROL · 01</span></div>
+<header class="toolbar"><div class="crumb">Patrimonio personal <span style="padding:0 9px">/</span><b id="crumb">Vista general</b></div><div class="toolright"><span class="chip"><span class="statusdot"></span>Prototipo interactivo</span><button class="tbtn" id="theme" title="Cambiar tema">☾</button><button class="tbtn" data-page="settings" title="Configuración">⚙</button></div></header>
+<section class="view active" id="view-dashboard">
+ <div class="pagehead"><div><div class="eyebrow">Tu tranquilidad, en números</div><h1>Tu panorama financiero</h1><p>Tus inversiones y ahorros, organizados en un solo lugar.</p></div><button class="btn primary" data-add="investments">＋ Agregar dinero</button></div>
+ <div class="overview"><div><small>Patrimonio registrado <span style="font-size:10px;border:1px solid #ffffff3c;border-radius:50px;padding:3px 7px;margin-left:6px">PARCIAL</span></small><div class="overview-value" id="grand-value">US$ 2.308,53</div><div class="overview-note">Incluye solo fuentes documentadas o ingresadas por ti · No es una cotización en vivo</div></div><div class="overview-right"><div class="currency-switch"><button data-display="USD" class="selected">USD</button><button data-display="COP">COP</button></div><button class="btn ghost" style="color:#e5edff;border-color:#ffffff43" data-page="settings">Editar tasa de cambio →</button></div></div>
+ <div class="dash-grid"><div class="metric"><div class="metric-head"><span class="metricicon">↗</span> Inversiones</div><div class="metricval" id="stat-invest">US$ 2.308,53</div><div class="metricfoot">Portafolios y activos invertidos</div></div><div class="metric"><div class="metric-head"><span class="metricicon">⌂</span> Ahorros en pesos</div><div class="metricval" id="stat-cop">$ 0 COP</div><div class="metricfoot">Pendiente de registrar tus cuentas</div></div><div class="metric"><div class="metric-head"><span class="metricicon">＄</span> Ahorros en dólares</div><div class="metricval" id="stat-usd">US$ 0,00</div><div class="metricfoot">Pendiente de registrar tus cuentas</div></div></div>
+ <div class="pair"><div class="panel"><div class="sectionrow"><h3>Evolución documentada</h3><span class="periodpill">Septiembre de 2026</span></div><div class="chartwrap"><svg class="linechart" viewBox="0 0 600 218" preserveAspectRatio="none"><defs><linearGradient id="gra" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#cfc9bd" stop-opacity=".29"/><stop offset="1" stop-color="#cfc9bd" stop-opacity="0"/></linearGradient></defs><line class="gridline" x1="20" y1="43" x2="580" y2="43"/><line class="gridline" x1="20" y1="98" x2="580" y2="98"/><line class="gridline" x1="20" y1="153" x2="580" y2="153"/><path id="graphArea" d="M30 162 L570 54 L570 204 L30 204 Z" fill="url(#gra)"/><path id="graphLine" d="M30 162 L570 54" fill="none" stroke="#ede7dc" stroke-width="3.5" stroke-linecap="round"/><circle id="graphDot1" cx="30" cy="162" r="5" fill="#ede7dc" stroke="var(--card)" stroke-width="4"/><circle id="graphDot2" cx="570" cy="54" r="6" fill="#ff7849" stroke="var(--card)" stroke-width="4"/></svg></div><div class="timeline"><span>01 sep · US$ 2.090,27</span><span>30 sep · US$ 2.308,53</span></div><p class="help">Dos cortes reales del extracto Hapi. La variación del saldo incluye aportes; no representa el rendimiento.</p></div>
+ <div class="panel"><div class="sectionrow"><h3>Distribución de tu dinero</h3><span>Por categoría</span></div><div class="donutrow"><div class="donut" id="allocationDonut"><div class="donutcenter"><strong id="allocationCenter">100%</strong><small>registrado</small></div></div><div class="legend" id="allocationLegend"></div></div><p class="help">La proporción cambia cuando añades cuentas o inversiones.</p></div></div>
+ <div class="bottomgrid"><div class="panel"><div class="sectionrow"><h3>Movimientos para conciliar</h3><span class="tag warn">No sumados</span></div><div id="activities"></div><button class="btn" data-page="documents" style="width:100%;margin-top:12px">Ver documentos y movimientos →</button></div><div class="panel"><div class="sectionrow"><h3>Insights patrimoniales</h3><span class="tag blue">Automáticos</span></div><div id="insights"></div></div></div>
+</section>
+<section class="view" id="view-investments"><div class="pagehead"><div><div class="eyebrow">01 / Inversiones</div><h1>Portafolio de inversiones</h1><p>Posiciones, efectivo, concentración y fuentes de inversión.</p></div><button class="btn primary" data-add="investments">＋ Nueva inversión</button></div>
+<div class="dash-grid" style="margin-bottom:17px"><div class="metric"><div class="metric-head">Valor total</div><div class="metricval" id="invtotal"></div><div class="metricfoot">Incluye efectivo interno de Hapi</div></div><div class="metric"><div class="metric-head">Valores en Hapi</div><div class="metricval">US$ 2.041,43</div><div class="metricfoot">Al 30 sep 2026</div></div><div class="metric"><div class="metric-head">Efectivo en Hapi</div><div class="metricval">US$ 267,10</div><div class="metricfoot">No se duplica como ahorro USD</div></div></div>
+<div class="two"><div class="panel"><div class="sectionrow"><h3>Mis plataformas</h3><span>Fuentes registradas</span></div><div id="investAccounts"></div></div><div class="panel"><div class="sectionrow"><h3>Mayores posiciones</h3><span>Hapi · 30 sep 2026</span></div><div id="topPositions"></div></div></div>
+<div class="panel" style="margin-top:17px"><div class="sectionrow"><h3>Detalle de activos Hapi <span class="tag blue">25 posiciones</span></h3><input class="search" id="holdSearch" placeholder="Buscar ticker o empresa..." aria-label="Buscar activo"/></div><div style="overflow:auto"><table class="holdtable"><thead><tr><th>Activo</th><th class="right">Cantidad</th><th class="right">Valor USD</th><th class="right">% del portafolio Hapi</th></tr></thead><tbody id="holdbody"></tbody></table></div><div class="help">La fuente es el extracto de septiembre, no una conexión de mercado en tiempo real.</div></div></section>
+<section class="view" id="view-cop"><div class="pagehead"><div><div class="eyebrow">02 / Ahorro local</div><h1>Ahorros en pesos</h1><p>Cuentas de ahorro, bolsillos, CDT y fondos disponibles en COP.</p></div><button class="btn primary" data-add="cop">＋ Agregar cuenta</button></div><div class="overview"><div><small>Ahorros registrados en COP</small><div class="overview-value" id="copTotal"></div><div class="overview-note">Esta cantidad es independiente de tus inversiones y ahorros USD.</div></div><div class="overview-right"><span class="periodpill" style="color:white;border-color:#ffffff44">COP · moneda original</span></div></div><div class="panel"><div class="sectionrow"><h3>Mis fuentes de ahorro</h3><span id="copCount"></span></div><div id="copAccounts"></div></div></section>
+<section class="view" id="view-usd"><div class="pagehead"><div><div class="eyebrow">03 / Ahorro internacional</div><h1>Ahorros en dólares</h1><p>Saldo disponible en plataformas externas, dólares digitales y cuentas USD.</p></div><button class="btn primary" data-add="usd">＋ Agregar cuenta</button></div><div class="overview"><div><small>Ahorros registrados en USD</small><div class="overview-value" id="usdTotal"></div><div class="overview-note">No incluye el efectivo Hapi porque está contabilizado en inversiones.</div></div><div class="overview-right"><span class="periodpill" style="color:white;border-color:#ffffff44">USD · moneda original</span></div></div><div class="panel"><div class="sectionrow"><h3>Mis fuentes de ahorro</h3><span id="usdCount"></span></div><div id="usdAccounts"></div></div></section>
+<section class="view" id="view-documents"><div class="pagehead"><div><div class="eyebrow">04 / Evidencia y trazabilidad</div><h1>Mis documentos</h1><p>Un futuro importador reconocerá saldos, movimientos y posiciones por proveedor.</p></div><button class="btn" id="backup">↓ Exportar copia JSON</button></div><div class="panel" style="margin-bottom:17px"><div class="sectionrow"><h3>Agregar un extracto o comprobante</h3><span class="demo-badge">Demo: no interpreta PDFs nuevos</span></div><div class="upload" id="dropzone" role="button" tabindex="0"><span class="uico">↥</span><strong>Arrastra un archivo aquí o haz clic para explorar</strong><small>PDF, CSV, XLSX o imágenes · En este demo solo se registra el nombre del archivo</small><input hidden type="file" id="fileInput" accept=".pdf,.csv,.xlsx,.xls,.png,.jpg,.jpeg" multiple/></div><p class="help">En producción: extracción local o privada → vista previa → confirmación → actualización del patrimonio. No se incorporarán importaciones sin validar ni se duplicarán movimientos.</p></div><div class="panel"><div class="sectionrow"><h3>Registro documental</h3><span>Origen y estado</span></div><div id="docs"></div></div></section>
+<section class="view" id="view-settings"><div class="pagehead"><div><div class="eyebrow">05 / Preferencias</div><h1>Configuración</h1><p>Personaliza el valor de conversión y administra los datos locales del demo.</p></div></div><div class="two"><div class="panel"><div class="sectionrow"><h3>Conversión de moneda</h3><span class="tag warn">Manual / ilustrativa</span></div><div class="formfield"><label for="fx">Pesos colombianos por 1 USD</label><input type="number" id="fx" min="1" step="0.01"/></div><button class="btn primary" id="saveFx">Guardar tasa</button><p class="help">La tasa inicial es un supuesto de demostración, NO la TRM vigente. En producción se consultará una fuente oficial y se conservará la tasa correspondiente a cada fecha.</p></div><div class="panel"><div class="sectionrow"><h3>Datos y privacidad</h3><span class="tag blue">Local</span></div><div class="alert"><strong>Este demo no dispone de cuenta ni servidor.</strong><br>Los saldos que añadas se guardan solo en este navegador mediante almacenamiento local. No introduzcas documentos personales sensibles para pruebas.</div><button class="btn" id="reset">↺ Restablecer datos del demo</button></div></div><div class="panel" style="margin-top:17px"><div class="sectionrow"><h3>Modelo de datos recomendado</h3></div><p class="notice">Cuenta / proveedor → moneda original → saldos fechados → operaciones → posiciones → documento soporte → estado de conciliación. La cartera Hapi de septiembre se registra como una sola fuente, con sus activos y efectivo internos. Los depósitos de octubre siguen pendientes de validación.</p></div></section>
+<div class="footer">NEXO PATRIMONIO · CONCEPTO FUNCIONAL · 2026 · Prototipo ilustrativo, no asesoría financiera ni saldo en tiempo real</div>
+</main>
+<nav class="mobilebottom" id="mobile-nav"><button data-page="dashboard" class="active"><svg><use href="#i-dashboard"/></svg>General</button><button data-page="investments"><svg><use href="#i-chart"/></svg>Inversiones</button><button data-page="cop"><svg><use href="#i-wallet"/></svg>Pesos</button><button data-page="usd"><svg><use href="#i-dollar"/></svg>Dólares</button><button data-page="documents"><svg><use href="#i-file"/></svg>Archivos</button></nav>
+</div>
+<div class="modalbg" id="modalbg" hidden><div class="modal"><div class="modaltop"><h2>Agregar fuente financiera</h2><button class="x" id="closeModal" aria-label="Cerrar">✕</button></div><form id="accountForm"><div class="formfield"><label for="atype">¿Dónde quieres registrarlo?</label><select id="atype" required><option value="investments">Inversiones</option><option value="cop">Ahorros en COP</option><option value="usd">Ahorros en USD</option></select></div><div class="formfield"><label for="aname">Nombre de cuenta o plataforma</label><input id="aname" maxlength="48" placeholder="Ej.: Cuenta de ahorros principal" required/></div><div class="formfield"><label for="aamount">Saldo actual (en la moneda de la categoría)</label><input id="aamount" type="number" min="0.01" step="0.01" placeholder="0.00" required/></div><p class="notice">El monto quedará como saldo declarado manualmente, no como rentabilidad. Puedes registrar una plataforma independiente.</p><div class="modalfoot"><button type="button" class="btn" id="cancelModal">Cancelar</button><button type="submit" class="btn primary">Guardar fuente</button></div></form></div></div>
+<script>
+(()=>{
+const HOLD=[['AMZN','Amazon',.55691,138.75],['GOOGL','Alphabet',.16469,56.67],['CVSA','Covista',.46946,57.37],['CIFR','Cipher Digital',1.55714,24.64],['META','Meta Platforms',.16505,119.69],['IVV','iShares Core S&P 500 ETF',.26172,200.44],['IEMG','iShares Core Emerging Markets ETF',1.30326,105.77],['IAU','iShares Gold Trust',.40173,31.38],['IREN','IREN',.58493,23.91],['LPTH','LightPath Technologies',1.16776,12.04],['MSTR','Strategy',.19311,29.56],['NVDA','Nvidia',.85018,194.16],['NU','Nu Holdings',10.65879,134.94],['ORCL','Oracle',.19572,26.87],['RBLX','Roblox',.34826,14.76],['RKLB','Rocket Lab',.34835,24.27],['SSYS','Stratasys',1.34168,11.15],['TTWO','Take-Two Interactive',.11318,23.48],['VGT','Vanguard Information Technology ETF',2.68696,337.67],['V','Visa',.11026,39.62],['SMH','VanEck Semiconductor ETF',.52087,317.21],['NBIS','Nebius',.26601,62.75],['ZETA','Zeta Global',1.15925,36.60],['EOSE','Eos Energy',1,3.07],['ONDS','Ondas',2,14.66]];
+const KEY='nexo_demo_2026_v1';const initial={accounts:[],fx:4200,display:'USD',theme:'dark',documents:[]};let state;try{state={...initial,...JSON.parse(localStorage.getItem(KEY)||'{}')}}catch(e){state={...initial}};
+const $=s=>document.querySelector(s);const all=s=>[...document.querySelectorAll(s)];const usd=n=>new Intl.NumberFormat('es-CO',{style:'currency',currency:'USD',minimumFractionDigits:2,maximumFractionDigits:2}).format(n).replace('US$', 'US$ ');const cop=n=>new Intl.NumberFormat('es-CO',{style:'currency',currency:'COP',minimumFractionDigits:0,maximumFractionDigits:0}).format(n);const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){console.warn("Persistencia local no disponible",e)}};const accounts=t=>state.accounts.filter(a=>a.type===t);const sum=t=>accounts(t).reduce((x,a)=>x+a.amount,0);const inv=()=>2308.53+sum('investments');const totalUSD=()=>inv()+sum('usd')+sum('cop')/state.fx;const toBase=n=>state.display==='USD'?usd(n):cop(n*state.fx);const titles={dashboard:'Vista general',investments:'Inversiones',cop:'Ahorros COP',usd:'Ahorros USD',documents:'Mis documentos',settings:'Configuración'};
+let page='dashboard';function navigate(p){if(!titles[p])return;page=p;all('.view').forEach(el=>el.classList.toggle('active',el.id==='view-'+p));all('[data-page]').forEach(el=>el.classList.toggle('active',el.dataset.page===p));$('#crumb').textContent=titles[p];window.scrollTo({top:0,behavior:'smooth'})}
+function render(){const tot=totalUSD();$('#grand-value').textContent=toBase(tot);$('#stat-invest').textContent=usd(inv());$('#stat-cop').textContent=cop(sum('cop'));$('#stat-usd').textContent=usd(sum('usd'));$('#invtotal').textContent=usd(inv());$('#copTotal').textContent=cop(sum('cop'));$('#usdTotal').textContent=usd(sum('usd'));$('#fx').value=state.fx;all('[data-display]').forEach(b=>b.classList.toggle('selected',b.dataset.display===state.display));document.documentElement.classList.toggle('light',state.theme==='light');$('#theme').textContent=state.theme==='light'?'☀':'☾';
+const groups=[{n:'Inversiones',v:inv(),c:'#eee9de'},{n:'Ahorros COP',v:sum('cop')/state.fx,c:'#77746e'},{n:'Ahorros USD',v:sum('usd'),c:'#ff7849'}];let start=0;const segments=[];for(const g of groups){const pct=tot>0?g.v/tot*100:0;segments.push(`${g.c} ${start.toFixed(3)}% ${(start+pct).toFixed(3)}%`);start+=pct}$('#allocationDonut').style.background=`conic-gradient(${segments.join(',')})`;$('#allocationCenter').textContent='100%';$('#allocationLegend').innerHTML=groups.map(g=>`<div class="legenditem"><i class="swatch" style="background:${g.c}"></i><span>${g.n}</span><b>${(tot?g.v/tot*100:0).toFixed(1).replace('.',',')}%</b></div>`).join('');
+$('#copCount').textContent=`${accounts('cop').length} cuentas`;$('#usdCount').textContent=`${accounts('usd').length} cuentas`;
+renderAccount('investAccounts','investments');renderAccount('copAccounts','cop');renderAccount('usdAccounts','usd');
+let top=[...HOLD].sort((a,b)=>b[3]-a[3]).slice(0,5);$('#topPositions').innerHTML=top.map(a=>`<div style="padding:11px 0"><div class="flexbt"><span style="font-size:12px;font-weight:750">${esc(a[0])}</span><span style="font-size:11px;color:var(--muted)">${usd(a[3])} · ${(a[3]/2308.53*100).toFixed(1)}%</span></div><div class="tinybar"><span style="width:${(a[3]/337.67*100).toFixed(2)}%"></span></div></div>`).join('');renderHoldings();
+const unrec=[{date:'16 oct 2026 · 12:11',amount:45},{date:'14 oct 2026 · 08:41',amount:30},{date:'07 oct 2026 · 11:21',amount:225}];$('#activities').innerHTML=unrec.map(m=>`<div class="activity"><div class="actico">↙</div><div class="acttext"><b>Depósito por conciliar</b><small>${m.date} · origen: captura adjunta</small></div><div class="actval" style="color:var(--gold)">+${usd(m.amount)}</div></div>`).join('');
+const tech=HOLD.filter(a=>['VGT','SMH','NVDA'].includes(a[0])).reduce((x,a)=>x+a[3],0);$('#insights').innerHTML=`<div class="alert"><strong>Datos por completar</strong><br>Faltan tus saldos en pesos y en otras cuentas USD. El total mostrado no es tu patrimonio completo.</div><div class="insight"><div class="insighticon">◎</div><p><b>${(tech/2308.53*100).toFixed(1).replace('.',',')}% del total Hapi</b> está en VGT, SMH y NVDA. Sus exposiciones tecnológicas pueden solaparse.</p></div><div class="insight"><div class="insighticon">↳</div><p><b>US$ 300 por conciliar</b> en tres depósitos de octubre. No los sumamos para evitar duplicaciones.</p></div><div class="insight"><div class="insighticon">≋</div><p><b>La conversión COP/USD es manual:</b> ${cop(state.fx)} por dólar (supuesto del demo).</p></div>`;
+$('#docs').innerHTML=`<div class="activity"><div class="actico">▤</div><div class="acttext"><b>Extracto Hapi / Apex · septiembre 2026</b><small>PDF proporcionado · 25 posiciones · corte 30 sep</small></div><span class="tag">Procesado para esta demo</span></div><div class="activity"><div class="actico">▧</div><div class="acttext"><b>Captura de depósitos · octubre 2026</b><small>3 movimientos por US$ 300 · sin vinculación confirmada</small></div><span class="tag warn">Por conciliar</span></div>`+state.documents.map(d=>`<div class="activity"><div class="actico">▧</div><div class="acttext"><b>${esc(d.name)}</b><small>Archivo registrado localmente · ${esc(d.date)}</small></div><span class="tag warn">Pendiente de procesar</span></div>`).join('');
+}
+function renderAccount(id,t){const names={investments:'inversiones',cop:'ahorros en COP',usd:'ahorros en USD'};let base=t==='investments'?`<div class="account"><div class="accico">↗</div><div class="accinfo"><b>Hapi · Apex Clearing</b><small>Extracto de septiembre 2026 · 25 activos + efectivo</small></div><div class="accamount">${usd(2308.53)}<span>30 sep 2026</span></div></div>`:'';const items=accounts(t).map(a=>`<div class="account"><div class="accico">${t==='cop'?'₱':t==='usd'?'$':'↗'}</div><div class="accinfo"><b>${esc(a.name)}</b><small>Saldo manual · ${esc(a.date)}</small></div><div class="accamount">${t==='cop'?cop(a.amount):usd(a.amount)}<span>Declarado por ti</span></div></div>`).join('');if(!base&&!items){$(`#${id}`).innerHTML=`<div class="empty"><div class="emptyico">◉</div><strong>Aún no tienes ${names[t]} registrados</strong><p>Añade una cuenta y aparecerá aquí y en el dashboard.</p><button class="btn primary" data-add="${t}" style="margin-top:12px">＋ Registrar cuenta</button></div>`}else $(`#${id}`).innerHTML=base+items}
+function renderHoldings(){let q=($('#holdSearch').value||'').toLowerCase().trim();const shown=HOLD.filter(a=>a[0].toLowerCase().includes(q)||a[1].toLowerCase().includes(q)).sort((a,b)=>b[3]-a[3]);$('#holdbody').innerHTML=shown.map(a=>`<tr><td><div class="ticker">${esc(a[0])}</div><div class="tickername">${esc(a[1])}</div></td><td class="right">${new Intl.NumberFormat('es-CO',{maximumFractionDigits:5}).format(a[2])}</td><td class="right">${usd(a[3])}</td><td class="right">${(a[3]/2308.53*100).toFixed(2).replace('.',',')}%</td></tr>`).join('')||'<tr><td colspan="4">No se encontraron activos</td></tr>'}
+function openModal(type='investments'){$('#atype').value=type;$('#aname').value='';$('#aamount').value='';$('#modalbg').hidden=false;setTimeout(()=>$('#aname').focus(),10)}function closeModal(){$('#modalbg').hidden=true}
+all('[data-page]').forEach(x=>x.addEventListener('click',()=>navigate(x.dataset.page)));document.addEventListener('click',e=>{let b=e.target.closest('[data-add]');if(b)openModal(b.dataset.add)});all('[data-display]').forEach(x=>x.addEventListener('click',()=>{state.display=x.dataset.display;save();render()}));$('#theme').addEventListener('click',()=>{state.theme=state.theme==='dark'?'light':'dark';save();render()});$('#closeModal').onclick=closeModal;$('#cancelModal').onclick=closeModal;$('#modalbg').addEventListener('click',e=>{if(e.target.id==='modalbg')closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});$('#accountForm').addEventListener('submit',e=>{e.preventDefault();const name=$('#aname').value.trim();const amount=Number($('#aamount').value);const type=$('#atype').value;if(!name||!Number.isFinite(amount)||amount<=0)return;state.accounts.push({name,amount,type,date:new Date().toLocaleDateString('es-CO')});save();render();closeModal();navigate(type)});$('#holdSearch').addEventListener('input',renderHoldings);$('#saveFx').onclick=()=>{const n=Number($('#fx').value);if(!Number.isFinite(n)||n<=0||n>100000){alert('Introduce una tasa de cambio válida.');return}state.fx=n;save();render();alert('Tasa de conversión del demo actualizada.')};$('#reset').onclick=()=>{if(confirm('¿Restablecer cuentas, archivos y preferencias del demo?')){state={...initial};save();render();navigate('dashboard')}};
+$('#dropzone').onclick=()=>$('#fileInput').click();$('#dropzone').onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();$('#fileInput').click()}};['dragenter','dragover'].forEach(ev=>$('#dropzone').addEventListener(ev,e=>{e.preventDefault();$('#dropzone').style.borderColor='var(--green)'}));['dragleave','drop'].forEach(ev=>$('#dropzone').addEventListener(ev,e=>{e.preventDefault();$('#dropzone').style.borderColor=''}));const processFiles=files=>{if(!files||!files.length)return;for(const f of files){if(!/\.(pdf|csv|xlsx|xls|png|jpe?g)$/i.test(f.name))continue;state.documents.push({name:f.name,date:new Date().toLocaleDateString('es-CO')})}save();render();alert('Archivos registrados en el demo. No se han leído ni procesado ni enviado a ningún servidor; para el producto final se implementará el extractor validado.')};$('#fileInput').onchange=e=>{processFiles(e.target.files);e.target.value=''};$('#dropzone').ondrop=e=>processFiles(e.dataTransfer.files);
+$('#backup').onclick=()=>{const blob=new Blob([JSON.stringify({exportedAt:new Date().toISOString(),state,base:{hapiUSD:2308.53,date:'2026-09-30'},note:'Incluye únicamente cambios manuales y datos de demostración'},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='nexo-demo-respaldo.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};render();
+})();
+</script>
+</body>
+</html>

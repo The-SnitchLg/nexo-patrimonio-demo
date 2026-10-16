@@ -1,0 +1,16 @@
+# Graphify ignore patterns for Nexo Patrimonio
+node_modules/
+dist/
+dist-ssr/
+.cache/
+coverage/
+test-results/
+playwright-report/
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.local
+.env
+.env.local
+docs/referencias/
