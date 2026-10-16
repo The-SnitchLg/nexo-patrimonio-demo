@@ -394,5 +394,11 @@
     "seen": 1792190782.8750606,
     "ast_hash": "2b3d5bbe4b0a2d7036f288aa6a534382",
     "semantic_hash": "2b3d5bbe4b0a2d7036f288aa6a534382"
+  },
+  "src/services/FinanceDataService.ts": {
+    "mtime": 1792190847.9679978,
+    "seen": 1792190884.3981102,
+    "ast_hash": "f706dceea31762f5fed2aedc746f12da",
+    "semantic_hash": "f706dceea31762f5fed2aedc746f12da"
   }
 }

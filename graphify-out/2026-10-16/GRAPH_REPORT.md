@@ -4,12 +4,12 @@
 - cluster-only mode — file stats not available
 
 ## Summary
-- 652 nodes · 1402 edges · 25 communities (22 shown, 3 thin omitted)
+- 654 nodes · 1404 edges · 26 communities (22 shown, 4 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 36 edges (avg confidence: 0.86)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `18a73f99`
+- Built from commit: `aee3ac46`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -39,6 +39,7 @@
 - scripts
 - vite.config.ts
 - tsconfig.json
+- @supabase/supabase-js
 
 ## God Nodes (most connected - your core abstractions)
 1. `useFinance()` - 43 edges
@@ -67,7 +68,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (25 total, 3 thin omitted)
+## Communities (26 total, 4 thin omitted)
 
 ### Community 0 - "useFinance"
 Cohesion: 0.08
@@ -98,8 +99,8 @@ Cohesion: 0.09
 Nodes (16): _contains_phrase(), _exact_match_diagnostic(), _exact_row_identity(), _legacy_successor_guidance(), _normalize(), _passes_threshold(), _project_row(), _query_coverage() (+8 more)
 
 ### Community 7 - "package.json"
-Cohesion: 0.07
-Nodes (26): name, private, type, version, clsx, date-fns, decimal.js, @hookform/resolvers (+18 more)
+Cohesion: 0.08
+Nodes (25): name, private, type, version, clsx, date-fns, decimal.js, @hookform/resolvers (+17 more)
 
 ### Community 8 - "search"
 Cohesion: 0.14
@@ -158,9 +159,9 @@ Cohesion: 0.40
 Nodes (4): compilerOptions, paths, files, references
 
 ## Knowledge Gaps
-- **20 isolated node(s):** `clsx`, `date-fns`, `@hookform/resolvers`, `jsdom`, `motion` (+15 more)
+- **19 isolated node(s):** `clsx`, `date-fns`, `@hookform/resolvers`, `jsdom`, `motion` (+14 more)
   These have ≤1 connection - possible missing edges. (Counts symbols only; 231 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **3 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
@@ -170,12 +171,12 @@ _Questions this graph is uniquely positioned to answer:_
 - **Are the 3 inferred relationships involving `DesignSystemGenerator` (e.g. with `TestReasoningMatch` and `TestReasoningContract`) actually correct?**
   _`DesignSystemGenerator` has 3 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `clsx`, `date-fns`, `@hookform/resolvers` to the rest of the system?**
-  _20 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _19 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `useFinance` be split into smaller, more focused modules?**
   _Cohesion score 0.08050645007166746 - nodes in this community are weakly interconnected._
 - **Why does `DesignSystemGenerator` connect `DesignSystemGenerator` to `test_design_system_mode.py`, `design_system.py`, `test_core.py`?**
-  _High betweenness centrality (0.052) - this node is a cross-community bridge._
+  _High betweenness centrality (0.051) - this node is a cross-community bridge._
 - **Should `validate_data.py` be split into smaller, more focused modules?**
   _Cohesion score 0.05426356589147287 - nodes in this community are weakly interconnected._
 - **Why does `search_stack()` connect `search_stack` to `validate_data.py`, `design_system.py`, `core.py`, `search`, `_get_bm25`, `_search_csv_detailed`, `test_core.py`?**
-  _High betweenness centrality (0.038) - this node is a cross-community bridge._
+  _High betweenness centrality (0.037) - this node is a cross-community bridge._
