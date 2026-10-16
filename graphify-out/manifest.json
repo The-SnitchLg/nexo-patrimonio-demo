@@ -258,10 +258,10 @@
     "semantic_hash": "70ec674c679c75f80c47ec309f886e06"
   },
   "src/components/finance/InsightsList.tsx": {
-    "mtime": 1792190166.301497,
-    "seen": 1792190333.0952961,
-    "ast_hash": "8bdf35f34de5024849fddc2b2aba77c2",
-    "semantic_hash": "8bdf35f34de5024849fddc2b2aba77c2"
+    "mtime": 1792191175.9851682,
+    "seen": 1792191210.1539526,
+    "ast_hash": "018a7f8967f91c4777493042d427ff10",
+    "semantic_hash": "018a7f8967f91c4777493042d427ff10"
   },
   "src/components/finance/MetricStrip.tsx": {
     "mtime": 1792190166.307595,
@@ -418,5 +418,17 @@
     "seen": 1792191080.0074074,
     "ast_hash": "622c9a51a1b7db0ce0fbfb459fc17e19",
     "semantic_hash": "622c9a51a1b7db0ce0fbfb459fc17e19"
+  },
+  "src/domain/analytics.ts": {
+    "mtime": 1792191132.7553098,
+    "seen": 1792191210.1559515,
+    "ast_hash": "0260ceddf80ff58a0973fbc875954469",
+    "semantic_hash": "0260ceddf80ff58a0973fbc875954469"
+  },
+  "tests/unit/analytics.test.ts": {
+    "mtime": 1792191144.1630635,
+    "seen": 1792191210.160011,
+    "ast_hash": "86c81800498cbbb731f8adde63c67a4a",
+    "semantic_hash": "86c81800498cbbb731f8adde63c67a4a"
   }
 }
